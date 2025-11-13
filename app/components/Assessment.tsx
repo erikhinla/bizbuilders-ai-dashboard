@@ -51,7 +51,7 @@ export default function Assessment({ brandContext = 'generic' }: { brandContext?
       targetBrand = 'bizbuilders';
     } else if (responses.q4_solution_preference === 'allin') {
       targetBrand = 'bizbuilders';
-    } else if (responses.q4_solution_preference === 'tactical') {
+    } else if (responses.q4_solution_preference === 'proveit') {
       targetBrand = 'bizbot';
     }
 
@@ -238,6 +238,23 @@ export default function Assessment({ brandContext = 'generic' }: { brandContext?
                 <div className="font-semibold text-slate-900">Organized & Flowing</div>
                 <p className="text-sm text-slate-600 mt-1">Complete workflow blueprint with integration, digital organizing, and ownership. Your operation actually gets unified.</p>
                 <div className="mt-2 text-lg font-bold text-amber-600">$10-15K | 3-4 weeks</div>
+              </div>
+            </label>
+
+            {/* Prove It Works */}
+            <label className="flex items-start p-5 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-emerald-400 hover:bg-emerald-50 transition">
+              <input
+                type="radio"
+                name="q4"
+                value="proveit"
+                checked={responses.q4_solution_preference === 'proveit'}
+                onChange={(e) => handleResponse('q4_solution_preference', e.target.value)}
+                className="mt-1 w-4 h-4"
+              />
+              <div className="ml-4 flex-1">
+                <div className="font-semibold text-slate-900">Prove It Works</div>
+                <p className="text-sm text-slate-600 mt-1">GenAI pitch videos in 48 hours. Show prospects your process works, close deals faster.</p>
+                <div className="mt-2 text-lg font-bold text-emerald-600">$5-12K | 2-3 days</div>
               </div>
             </label>
 
